@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-bg-color: #ffffff;
+  --secondary-bg-color: #eff7ff;
+  --primary-blue: #2c83fb;
+  --secondary-blue: #385bff;
+  --primary-gray: #2c465b;
+  --secondary-gray: #d2dde3;
+}
+
 * {
   margin: 0;
   padding: 0;
