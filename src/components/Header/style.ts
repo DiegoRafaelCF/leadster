@@ -12,7 +12,7 @@ export const HeaderContainer = styled.section`
   width: 100%;
 `;
 
-export const MainHeader = styled.div`
+export const LogoContainer = styled.div`
   width: 100%;
   height: 80px;
   background-color: var(--primary-bg-color);
@@ -130,7 +130,7 @@ export const SubTitle = styled.h2`
   padding: 10px 20px 0px 20px;
   border-top: 1px solid var(--secondary-gray);
   text-align: center;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 15px;
   color: var(--primary-gray);

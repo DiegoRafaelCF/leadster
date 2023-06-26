@@ -5,10 +5,12 @@
 :root {
   --primary-bg-color: #ffffff;
   --secondary-bg-color: #eff7ff;
+  --icon-bg-color: #EBEEF5;
   --primary-blue: #2c83fb;
   --secondary-blue: #385bff;
   --primary-gray: #2c465b;
-  --secondary-gray: #d2dde3;
+  --secondary-gray: #e9ecf3;
+  --option-gray: #677294;
 }
 
 * {

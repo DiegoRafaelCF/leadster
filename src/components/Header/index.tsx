@@ -2,7 +2,7 @@ import {
   HeaderContainer,
   InformationTag,
   Logo,
-  MainHeader,
+  LogoContainer,
   MoreConversionContainer,
   SecondaryHeader,
   SubTitle,
@@ -12,9 +12,9 @@ import {
 export function Header(): JSX.Element {
   return (
     <HeaderContainer>
-      <MainHeader>
+      <LogoContainer>
         <Logo src="/images/logo.png" alt="leadster-logo" />
-      </MainHeader>
+      </LogoContainer>
       <SecondaryHeader>
         <InformationTag>WEBNARS EXCLUSIVOS</InformationTag>
         <MoreConversionContainer>
