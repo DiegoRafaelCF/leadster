@@ -8,7 +8,9 @@ import styled from 'styled-components';
   -> min-width: 1024px;
 */
 
-export const HeaderContainer = styled.section`
+// This container bellow wraps all header content
+
+export const HeaderContainer = styled.header`
   width: 100%;
 `;
 
@@ -28,6 +30,8 @@ export const Logo = styled.img`
     width: 132px;
   }
 `;
+
+// This container bellow wraps the bottom of the header content
 
 export const SecondaryHeader = styled.div`
   width: 100%;
@@ -58,6 +62,8 @@ export const InformationTag = styled.span`
     font-size: 10px;
   }
 `;
+
+// This container bellow wraps the header title to control the application of the image near the last letter "o"
 
 export const MoreConversionContainer = styled.div`
   position: relative;

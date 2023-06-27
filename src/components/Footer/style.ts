@@ -3,12 +3,34 @@ import styled from 'styled-components';
 /* 
   To the header component I preferred to use 1 breakpoints.
   It's:
-  -> min-width: 1024px;
+  -> max-width: 1024px;
 */
+
+// This container bellow wraps all the footer
+
+export const FooterContainer = styled.footer`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+// This container bellow wraps the top of the footer content and applies a broken line
+
+export const FooterTopContainer = styled.div`
+  width: 100%;
+  padding: 48px 0px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--secondary-gray);
+`;
+
+// This container bellow wraps the top of the footer content and sets a max-width
 
 export const FooterTop = styled.section`
   width: 100%;
-  padding: 48px 0px;
+  max-width: 1320px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +38,6 @@ export const FooterTop = styled.section`
 `;
 
 export const LogoContainer = styled.div`
-  width: 100%;
   margin-bottom: 40px;
   background-color: var(--primary-bg-color);
   display: flex;
@@ -41,7 +62,7 @@ export const FooterNavigator = styled.div`
   width: 70%;
   background-color: var(--primary-bg-color);
   display: flex;
-  gap: 40px;
+  gap: 30px;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
@@ -132,13 +153,15 @@ export const Text = styled.span`
   }
 `;
 
+// This container bellow wraps the bottom of the footer content and sets a max-width
+
 export const FooterBottom = styled.section`
   width: 100%;
+  max-width: 1320px;
   padding: 27px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid var(--secondary-gray);
 `;
 
 export const OtherInfosContainer = styled.div`
