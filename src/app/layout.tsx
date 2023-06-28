@@ -28,6 +28,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        {/* StyledComponentsRegistry is used to configure styled-component styles */}
         <StyledComponentsRegistry>
           <Header />
           <Nav />

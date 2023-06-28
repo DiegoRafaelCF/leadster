@@ -11,7 +11,7 @@ export function PaginationItem({
 }: PaginationItemProps) {
   if (isCurrent) {
     return (
-      <button className="bg-white w-[30px] h-[30px] font-DM font-bold text-blue-secondary-blue text-xl text-center flex justify-center items-center border-[1px] rounded-[8px] border-blue-secondary-blue">
+      <button className="bg-white w-[30px] h-[30px] font-PJ font-bold text-blue-secondary-blue text-xl text-center flex justify-center items-center border-[1px] rounded-[8px] border-blue-secondary-blue">
         {number}
       </button>
     );
@@ -20,7 +20,7 @@ export function PaginationItem({
   return (
     <button
       onClick={() => onPageChange(number)}
-      className="bg-white p-2 font-DM font-regular text-gray-primary-gray text-xl text-center flex justify-center items-center"
+      className="bg-white p-2 font-PJ font-regular text-gray-primary-gray text-lg text-center flex justify-center items-center"
     >
       {number}
     </button>

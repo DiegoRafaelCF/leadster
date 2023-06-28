@@ -1,6 +1,7 @@
 'use client';
 
 export default function Agencies() {
+  document.title = 'Leadster - Agências';
   return (
     <main className="w-full flex items-center justify-center p-16">
       <img

@@ -1,6 +1,7 @@
 'use client';
 
 export default function DigitalMarketing() {
+  document.title = 'Leadster - Marketing Digital';
   return (
     <main className="w-full flex items-center justify-center p-16">
       <img

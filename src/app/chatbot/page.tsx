@@ -1,6 +1,7 @@
 'use client';
 
 export default function Chatbot() {
+  document.title = 'Leadster - Chatbot';
   return (
     <main className="w-full flex items-center justify-center p-16">
       <img

@@ -22,14 +22,14 @@ export const NavContainer = styled.nav`
 `;
 
 export const NavContent = styled.div`
-  width: 60%;
+  max-width: 960px;
   padding: 60px 0px 20px 0px;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 3px solid var(--secondary-gray);
+  border-bottom: 2px solid var(--secondary-gray);
 
   @media (max-width: 1499px) {
     width: 80%;
