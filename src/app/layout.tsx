@@ -1,4 +1,10 @@
+import { Nav } from '@/components/Nav';
 import './globals.css';
+
+import { Header } from '@/components/Header';
+import { PaymentSection } from '@/components/PaymentSection';
+import { Footer } from '@/components/Footer';
+import StyledComponentsRegistry from '@/lib/registry';
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>Leadster</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -20,7 +27,15 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <StyledComponentsRegistry>
+          <Header />
+          <Nav />
+          {children}
+          <PaymentSection />
+          <Footer />
+        </StyledComponentsRegistry>
+      </body>
     </html>
   );
 }
