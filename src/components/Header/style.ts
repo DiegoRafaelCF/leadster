@@ -80,13 +80,11 @@ export const MoreConversionContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 0px 10px 10px 10px;
-
     ::after {
       width: 24px;
       height: 15px;
-      right: 0px;
-      bottom: 38px;
+      right: -8px;
+      bottom: 27px;
     }
   }
 

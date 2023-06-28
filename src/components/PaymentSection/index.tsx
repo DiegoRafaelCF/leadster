@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Button,
   ButtonContainer,
@@ -20,7 +22,10 @@ export function PaymentSection(): JSX.Element {
       <PaymentShape />
       <PaymentContent>
         <ImageContainer>
-          <MainImage src="/images/comparativo_img_CTA.png" />
+          <MainImage
+            src="/images/comparativo_img_CTA.png"
+            alt="comparative-chart"
+          />
         </ImageContainer>
         <InfosContainer>
           <Title>
@@ -31,13 +36,14 @@ export function PaymentSection(): JSX.Element {
           </SubTitle>
           <ButtonContainer>
             <Button>VER DEMONSTRAÇÃO</Button>
-            <InfoImage width="150px" src="/images/selo_RD.png" />
+            <InfoImage width="150px" src="/images/selo_RD.png" alt="selo-RD" />
             <TextContainer>
               <TextContainer>
                 <InfoImage
                   width="16px"
                   height="16px"
                   src="/images/no-card-dark.png"
+                  alt="no-credit-card"
                 />
                 <InfoText>Não é necessário Cartão de Cŕedito</InfoText> |
               </TextContainer>
@@ -46,6 +52,7 @@ export function PaymentSection(): JSX.Element {
                   width="92px"
                   height="16px"
                   src="/images/rating.png"
+                  alt="rating"
                 />
                 <InfoText>4.9/5 média de satisfação</InfoText>
               </TextContainer>

@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import {
   CommonBlock,
@@ -13,11 +15,77 @@ import {
   LogoContainer,
   MenuTitle,
   Option,
+  OptionsList,
   OtherInfosContainer,
   SocialMediaBlock,
   SubTitle,
   Text,
 } from './style';
+
+type BlockTitle = 'main-links' | 'cases' | 'materials';
+
+interface OptionsInterface {
+  name: string;
+  link: string;
+}
+
+const commonBlocks: {
+  key: BlockTitle;
+  label: string;
+  options: OptionsInterface[];
+}[] = [
+  {
+    key: 'main-links',
+    label: 'Links Principais',
+    options: [
+      { name: 'Home', link: 'https://leadster.com.br/' },
+      { name: 'Ferramenta', link: 'https://leadster.com.br/preco/' },
+      { name: 'Preços', link: 'https://leadster.com.br/preco/' },
+      { name: 'Contato', link: 'https://leadster.com.br/contato/' },
+    ],
+  },
+  {
+    key: 'cases',
+    label: 'Cases',
+    options: [
+      {
+        name: 'Geração de Leads B2B',
+        link: 'https://leadster.com.br/geracao-de-leads/b2b/',
+      },
+      {
+        name: 'Geração de Leads em Software',
+        link: 'https://leadster.com.br/geracao-de-leads/software/',
+      },
+      {
+        name: 'Geração de Leads em Imobiliária',
+        link: 'https://leadster.com.br/geracao-de-leads/imobiliaria/',
+      },
+      {
+        name: 'Cases de Sucesso',
+        link: 'https://leadster.com.br/estudo-de-caso/',
+      },
+    ],
+  },
+  {
+    key: 'materials',
+    label: 'Materiais',
+    options: [
+      { name: 'Blog', link: 'https://leadster.com.br/blog/' },
+      {
+        name: 'Parceria com Agências',
+        link: 'https://leadster.com.br/agencias-parceiras/programa/',
+      },
+      {
+        name: 'Guia Definitivo do Marketing',
+        link: 'https://leadster.com.br/marketing-conversacional/',
+      },
+      {
+        name: 'Materiais Gratuitos',
+        link: 'https://leadster.com.br/materiais/',
+      },
+    ],
+  },
+];
 
 export function Footer(): JSX.Element {
   return (
@@ -34,78 +102,24 @@ export function Footer(): JSX.Element {
             <SubTitle>Transformando visitantes em clientes.</SubTitle>
           </LogoContainer>
           <FooterNavigator>
-            <CommonBlock>
-              <MenuTitle>Links Principais</MenuTitle>
-              <ul>
-                <Link href="/">
-                  <Option>Home</Option>
-                </Link>
-
-                <Link href="https://leadster.com.br/preco/" target="_blank">
-                  <Option>Ferramenta</Option>
-                </Link>
-                <Link href="https://leadster.com.br/preco/" target="_blank">
-                  <Option>Preços</Option>
-                </Link>
-                <Link href="https://leadster.com.br/contato/" target="_blank">
-                  <Option>Contato</Option>
-                </Link>
-              </ul>
-            </CommonBlock>
-            <CommonBlock>
-              <MenuTitle>Cases</MenuTitle>
-              <ul>
-                <Link
-                  href="https://leadster.com.br/geracao-de-leads/b2b/"
-                  target="_blank"
-                >
-                  <Option>Geração de Leads B2B</Option>
-                </Link>
-
-                <Link
-                  href="https://leadster.com.br/geracao-de-leads/software/"
-                  target="_blank"
-                >
-                  <Option>Geração de Leads em Software</Option>
-                </Link>
-                <Link
-                  href="https://leadster.com.br/geracao-de-leads/imobiliaria/"
-                  target="_blank"
-                >
-                  <Option>Geração de Leads em Imobiliária</Option>
-                </Link>
-                <Link
-                  href="https://leadster.com.br/estudo-de-caso/"
-                  target="_blank"
-                >
-                  <Option>Cases de Sucesso</Option>
-                </Link>
-              </ul>
-            </CommonBlock>
-            <CommonBlock>
-              <MenuTitle>Materiais</MenuTitle>
-              <ul>
-                <Link href="https://leadster.com.br/blog/" target="_blank">
-                  <Option>Blog</Option>
-                </Link>
-
-                <Link
-                  href="https://leadster.com.br/agencias-parceiras/programa/"
-                  target="_blank"
-                >
-                  <Option>Parceria com Agências</Option>
-                </Link>
-                <Link
-                  href="https://leadster.com.br/marketing-conversacional/"
-                  target="_blank"
-                >
-                  <Option>Guia Definitivo do Marketing</Option>
-                </Link>
-                <Link href="https://leadster.com.br/materiais/" target="_blank">
-                  <Option>Materiais Gratuitos</Option>
-                </Link>
-              </ul>
-            </CommonBlock>
+            {commonBlocks.map(({ key, label, options }) => {
+              return (
+                <CommonBlock key={key}>
+                  <MenuTitle>{label}</MenuTitle>
+                  <OptionsList>
+                    {options.map(({ name, link }) => {
+                      return (
+                        <li key={name}>
+                          <Link href={link} target="_blank">
+                            <Option>{name}</Option>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </OptionsList>
+                </CommonBlock>
+              );
+            })}
             <SocialMediaBlock>
               <MenuTitle>Siga a Leadster</MenuTitle>
               <Icons>
@@ -114,7 +128,7 @@ export function Footer(): JSX.Element {
                   target="_blank"
                 >
                   <IconContainer>
-                    <Icon src="/icons/linkedin-icon.svg" />
+                    <Icon src="/icons/linkedin-icon.svg" alt="linkedin-icon" />
                   </IconContainer>
                 </Link>
                 <Link
@@ -122,7 +136,7 @@ export function Footer(): JSX.Element {
                   target="_blank"
                 >
                   <IconContainer>
-                    <Icon src="/icons/facebook-icon.svg" />
+                    <Icon src="/icons/facebook-icon.svg" alt="facebook-icon" />
                   </IconContainer>
                 </Link>
                 <Link
@@ -130,7 +144,10 @@ export function Footer(): JSX.Element {
                   target="_blank"
                 >
                   <IconContainer>
-                    <Icon src="/icons/instagram-icon.svg" />
+                    <Icon
+                      src="/icons/instagram-icon.svg"
+                      alt="instagram-icon"
+                    />
                   </IconContainer>
                 </Link>
               </Icons>

@@ -83,8 +83,13 @@ export const MenuTitle = styled.p`
   color: var(--primary-gray);
 `;
 
+export const OptionsList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+`;
+
 export const Option = styled.p`
-  margin-bottom: 15px;
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -117,7 +122,7 @@ export const IconContainer = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 100%;
-  background-color: var(--icon-bg-color);
+  background-color: var(--secondary-gray);
   transition-duration: 0.5s;
 
   :hover {
