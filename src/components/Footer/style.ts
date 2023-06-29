@@ -128,15 +128,10 @@ export const IconContainer = styled.div`
   :hover {
     background-color: var(--primary-blue);
 
-    img {
+    svg {
       filter: brightness(100);
     }
   }
-`;
-
-export const Icon = styled.img`
-  width: 18px;
-  height: 18px;
 `;
 
 export const Text = styled.span`

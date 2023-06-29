@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { IoMdClose } from 'react-icons/io';
+import { BiSolidDownArrow } from 'react-icons/bi';
 
 interface OptionProps {
   optionId: string;
@@ -39,11 +41,7 @@ export function InputSelect({ options, id }: InputSelectProps) {
                   setCurrentOption(undefined);
                 }}
               >
-                <img
-                  src="/icons/close-icon.svg"
-                  className={`w-[14px] `}
-                  alt="close icon"
-                />
+                <IoMdClose className="text-gray-primary-gray" size={15} />
               </button>
             </div>
           ) : (
@@ -57,10 +55,9 @@ export function InputSelect({ options, id }: InputSelectProps) {
                   setIsDropDownOpened(!isDropdownOpened);
                 }}
               >
-                <img
-                  src="/icons/arrow-icon.png"
-                  className={`w-[10px] ${isDropdownOpened ? 'rotate-180' : ''}`}
-                  alt="arrow icon"
+                <BiSolidDownArrow
+                  className={` ${isDropdownOpened ? 'rotate-180' : ''}`}
+                  size={14}
                 />
               </button>
             </div>

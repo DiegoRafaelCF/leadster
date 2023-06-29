@@ -1,14 +1,15 @@
 'use client';
 
 import { useState } from 'react';
+import { RxHamburgerMenu } from 'react-icons/rx';
 import { usePathname, useRouter } from 'next/navigation';
+import { IoMdClose } from 'react-icons/io';
 import {
   Button,
   ButtonMenuMB,
   FilterContainer,
   FilterScreenMB,
   HeaderMenuMB,
-  ImageMenuMB,
   LogoMB,
   MenuContainerMB,
   NavContainer,
@@ -55,7 +56,7 @@ export function Nav(): JSX.Element {
             <HeaderMenuMB>
               <LogoMB src="images/logo.png" alt="leadster-logo" />
               <ButtonMenuMB onClick={() => setIsMenuMobileOpen(false)}>
-                <ImageMenuMB src="icons/close-icon.svg" alt="close-icon" />
+                <IoMdClose className="text-gray-primary-gray" size={30} />
               </ButtonMenuMB>
             </HeaderMenuMB>
             <NavOptionsMB>
@@ -98,7 +99,7 @@ export function Nav(): JSX.Element {
             })}
           </NavOptions>
           <ButtonMenuMB onClick={() => setIsMenuMobileOpen(true)}>
-            <ImageMenuMB src="icons/menu-icon.svg" alt="hamburguer-menu" />
+            <RxHamburgerMenu className="text-gray-primary-gray" size={30} />
           </ButtonMenuMB>
           <FilterContainer>
             <Text>Ordenar por</Text>

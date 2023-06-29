@@ -149,10 +149,6 @@ export const ButtonMenuMB = styled.button`
   }
 `;
 
-export const ImageMenuMB = styled.img`
-  width: 20px;
-`;
-
 export const NavOptionsMB = styled.ul`
   width: 100%;
   height: 40%;

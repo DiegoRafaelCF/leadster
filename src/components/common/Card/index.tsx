@@ -1,3 +1,5 @@
+import { FaPlay } from 'react-icons/fa';
+
 interface CardProps {
   title: string;
   thumbnail: string;
@@ -14,11 +16,9 @@ export function Card({ title, thumbnail, onClick }: CardProps) {
         {/* This tag below is a thumbnail filter when the mouse hovers over it */}
         <div className="hidden h-[70%] w-full absolute top-0 items-center justify-center z-10 group-hover:flex">
           <div className="w-full h-full bg-blue-secondary-blue opacity-60 rounded-t-xl z-10" />
-          <img
-            className="absolute z-20"
-            src="/icons/play-icon.png"
-            alt="play"
-          />
+          <div className="absolute z-20">
+            <FaPlay size={40} color="#ffffff" />
+          </div>
         </div>
 
         <img

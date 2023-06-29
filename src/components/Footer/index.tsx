@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
+import { TfiInstagram } from 'react-icons/tfi';
 import {
   CommonBlock,
   FooterBottom,
@@ -8,7 +10,6 @@ import {
   FooterNavigator,
   FooterTop,
   FooterTopContainer,
-  Icon,
   IconContainer,
   Icons,
   Logo,
@@ -128,7 +129,7 @@ export function Footer(): JSX.Element {
                   target="_blank"
                 >
                   <IconContainer>
-                    <Icon src="/icons/linkedin-icon.svg" alt="linkedin-icon" />
+                    <FaLinkedinIn className="text-gray-option-gray" size={15} />
                   </IconContainer>
                 </Link>
                 <Link
@@ -136,7 +137,7 @@ export function Footer(): JSX.Element {
                   target="_blank"
                 >
                   <IconContainer>
-                    <Icon src="/icons/facebook-icon.svg" alt="facebook-icon" />
+                    <FaFacebookF className="text-gray-option-gray" size={15} />
                   </IconContainer>
                 </Link>
                 <Link
@@ -144,10 +145,7 @@ export function Footer(): JSX.Element {
                   target="_blank"
                 >
                   <IconContainer>
-                    <Icon
-                      src="/icons/instagram-icon.svg"
-                      alt="instagram-icon"
-                    />
+                    <TfiInstagram className="text-gray-option-gray" size={15} />
                   </IconContainer>
                 </Link>
               </Icons>
