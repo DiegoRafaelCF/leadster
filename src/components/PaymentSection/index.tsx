@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import {
   Button,
   ButtonContainer,
@@ -15,10 +16,16 @@ import {
   TextContainer,
   Title,
 } from './style';
+import { DemonstrationModal } from '../common/DemonstrationModal';
 
 export function PaymentSection(): JSX.Element {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <PaymentContainer>
+      <DemonstrationModal isOpen={isModalOpen} closeModal={closeModal} />
       <PaymentShape />
       <PaymentContent>
         <ImageContainer>
@@ -35,7 +42,9 @@ export function PaymentSection(): JSX.Element {
             Criação e aplicação em <strong>4 minutos.</strong>
           </SubTitle>
           <ButtonContainer>
-            <Button>VER DEMONSTRAÇÃO</Button>
+            <Button onClick={() => setIsModalOpen(true)}>
+              VER DEMONSTRAÇÃO
+            </Button>
             <InfoImage width="150px" src="/images/selo_RD.png" alt="selo-RD" />
             <TextContainer>
               <TextContainer>

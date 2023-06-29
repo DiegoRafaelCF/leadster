@@ -58,23 +58,23 @@ export function VideoModal({ data, isOpen, closeModal }: ModalProps) {
                 <DownloadButton
                   type="xls"
                   title="Spreadsheet"
-                  path="/files/exemplo.doc"
+                  path="/files/spreadsheet.xlsx"
                 />
                 <DownloadButton
                   type="doc"
                   title="Document"
-                  path="/files/exemplo.doc"
+                  path="/files/document.docx"
                 />
                 <DownloadButton
                   type="ppt"
                   title="Presentation"
-                  path="/files/exemplo.doc"
+                  path="/files/presentation.pptx"
                 />
                 <div className="min-[1201px]:hidden">
                   <DownloadButton
                     type="zip"
                     title="Folder"
-                    path="/files/exemplo.doc"
+                    path="/files/folder.zip"
                   />
                 </div>
               </div>
@@ -85,19 +85,19 @@ export function VideoModal({ data, isOpen, closeModal }: ModalProps) {
           <DownloadButton
             type="xls"
             title="Spreadsheet"
-            path="/files/exemplo.doc"
+            path="/files/spreadsheet.xlsx"
           />
           <DownloadButton
             type="doc"
             title="Document"
-            path="/files/exemplo.doc"
+            path="/files/document.docx"
           />
           <DownloadButton
             type="ppt"
             title="Presentation"
-            path="/files/exemplo.doc"
+            path="/files/presentation.pptx"
           />
-          <DownloadButton type="zip" title="Folder" path="/files/exemplo.doc" />
+          <DownloadButton type="zip" title="Folder" path="/files/folder.zip" />
         </div>
       </div>
       <div className="fixed inset-0 z-40 bg-blue-secondary-blue opacity-25" />
