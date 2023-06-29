@@ -97,6 +97,7 @@ export const InfosContainer = styled.div`
 
   @media (max-width: 992px) {
     width: 100%;
+    align-items: center;
   }
 `;
 
@@ -136,7 +137,7 @@ export const ButtonContainer = styled.div`
   gap: 15px;
   border-top: 3px solid var(--secondary-gray);
 
-  @media (max-width: 576px) {
+  @media (max-width: 992px) {
     justify-content: center;
   }
 `;

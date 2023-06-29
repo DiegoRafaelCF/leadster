@@ -2,21 +2,20 @@
 
 import { Card } from '@/components/common/Card';
 import { Pagination } from '@/components/common/Pagination';
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer } from 'react';
+import {
+  LeadGenerationDefaultValues,
+  LeadGenerationReducer,
+} from '@/reducers/leadGenerationReduce';
+import { VideoModal } from '@/components/common/VideoModal';
 import infosMock from '../../infos-mock.json';
-
-interface InfoMockInterface {
-  id: number;
-  title: string;
-  desciption: string;
-  url: string;
-  thumbnail: string;
-}
 
 export default function LeadGeneration() {
   document.title = 'Leadster - Geração de Leads';
-  const [currentPage, setCurrentPage] = useState(1);
-  const [infos, setInfos] = useState<InfoMockInterface[]>([]);
+  const [dataReducer, dispatch] = useReducer(
+    LeadGenerationReducer,
+    LeadGenerationDefaultValues
+  );
 
   // This function works by getting a specific number of card information to show it to the user
   const getPartInfos = (page: number, total = 9) => {
@@ -31,32 +30,45 @@ export default function LeadGeneration() {
     return output;
   };
 
+  const setPage = (page: number) =>
+    dispatch({ type: 'SET_CURRENT_PAGE', currentPage: page });
+
   useEffect(() => {
-    const aux = getPartInfos(currentPage);
-    setInfos(aux);
+    const aux = getPartInfos(dataReducer.currentPage);
+    dispatch({ type: 'SET_INFOS', infos: aux });
 
     // This part works by moving the page up and down to the top of the card division
     const elem = document.getElementById('anchor');
     if (elem) elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [currentPage]);
+  }, [dataReducer.currentPage]);
 
   return (
     <main
       id="anchor"
       className="w-full flex flex-col items-center justify-center"
     >
+      <VideoModal
+        isOpen={dataReducer.isModalOpen}
+        data={dataReducer.currentInfo}
+        closeModal={() => {
+          dispatch({ type: 'SET_IS_MODAL_OPEN', isModalOpen: false });
+        }}
+      />
       {/* the cards will loaded when infos length is greater than 0 */}
-      {infos.length > 0 && (
+      {dataReducer.infos.length > 0 && (
         <>
           {/* Card division */}
           <div className="w-[90%] max-w-[960px] flex items-center justify-center py-14 flex-wrap gap-6">
-            {infos.map((info) => {
+            {dataReducer.infos.map((info) => {
               return (
                 <Card
                   key={info.id}
                   title={info.title}
                   thumbnail={info.thumbnail}
-                  onClick={() => console.log('Click')}
+                  onClick={() => {
+                    dispatch({ type: 'SET_CURRENT_INFO', currentInfo: info });
+                    dispatch({ type: 'SET_IS_MODAL_OPEN', isModalOpen: true });
+                  }}
                 />
               );
             })}
@@ -69,8 +81,8 @@ export default function LeadGeneration() {
             <Pagination
               totalCountOfRegisters={infosMock.length}
               registersPerPage={9}
-              currentPage={currentPage}
-              onPageChange={setCurrentPage}
+              currentPage={dataReducer.currentPage}
+              onPageChange={setPage}
             />
           </div>
         </>
