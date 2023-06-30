@@ -1,34 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Desafio - Leadster
 
-## Getting Started
+Desenvolver uma landing page em NextJS
 
-First, run the development server:
+## Descrição
+
+O desafio proposto pela Leadster consistia em desenvolver uma landing page com NextJS. Todo o material necessário para usar na criação (imagem e fonte) foi entregue por meio de um arquivo .zip. Como guia foi disponibilizado uma imagem png contendo o design final do site.
+
+A lp consistia basicamente em um site com header, nav e footer e tinha o objetivo principal a reprodução de vídeos.
+
+## Instalação
+
+Antes de iniciar o projeto será necessário instalar todas as dependências.
+
+Comandos de instalação:
+
+```bash
+npm i
+# ou
+yarn
+
+```
+
+Obs: a versão do Node que foi utilizado no desenvolvimento do código é v16.15.1
+
+## Uso
+
+Depois de instalar todos os pacotes, para iniciar a aplicação basta rodar um dos códigos abaixo no seu terminal:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estrutura de Arquivos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Dentro de src contém 5 pastas e um arquivo .json.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+-app: na pasta app tem a estrutura central do projeto. Como o desafio foi feito na nova versão do NextJS, aqui contém todas as rotas (incluindo a rota 'home') o arquivo de estilização global, o favicon e o layout principal (utilizado em todas as rotas da lp)
 
-## Learn More
+-components: essa pasta foi criada para receber todos os componentes usados no site junto com os seus arquivos de estilo. Componentes mais genéricos são guardados dentro da pasta common.
 
-To learn more about Next.js, take a look at the following resources:
+-interfaces: como foi utilizado o TypeScript neste desafio, esta pasta foi criada com o objetivo de englobar todos os futuros arquivos de interface do projeto.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-lib: essa pasta foi criada com o único objetivo de armazenar o registry.tsx . Este componente serve basicamente para coletar todos os estilos CSS gerados na hora da rendenrização e injetar dentro do <head> no layout root. 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+-reducers: a pasta reducers serve para armazenar todos os arquivos de reducer. (tanto o arquivo 'interfaces' quanto 'reducers' foi pensado numa organização futura do código)
 
-## Deploy on Vercel
+-infos-mock.json: aqui se encontra todos os dados fictícios utilizados na aplicação. (obs: os arquivos utilizados nos downloads estão dentro da pasta public/files)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Desafios e Aprendizados
+
+Aprendizados: foi muito divertido desenvolver essa aplicação pois consegui colocar em prática muitas coisas que eu não utilizava há um bom tempo como styled component. Junto a isso também foi possível desenvolver e estudar ao mesmo tempo com o novo NextJS e sua estrutura de pastas.
+
+Desafios: o maior desafio encontrado durante a escrita do código foi replicar da maneira mais fiel possível o design final. Depois de me acostumar a desenvolver olhando protótipos no figma, desenvolver olhando uma imagem png não foi fácil. Para me auxiliar nessa questão eu utilizei muitos dos estilos que eu encontrei no próprio site na Leadster, já que algumas partes eram parecidas.
+
+## Autor
+
+Diego Rafael
