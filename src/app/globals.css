@@ -37,3 +37,24 @@ ul,
 ol {
   list-style: none;
 }
+
+/* This media query works by controlling the page orientation in the mobile version */
+@media screen and (max-width: 1000px) and (max-height: 600px) and (orientation: landscape) {
+  body::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--secondary-blue);
+    color: #fff;
+    content: 'Desculpe, mas o site não é compatível com o modo paisagem';
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    z-index: 1000;
+  }
+}
