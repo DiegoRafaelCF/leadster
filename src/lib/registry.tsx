@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable react/jsx-no-useless-fragment */
 
 'use client';
@@ -17,6 +18,7 @@ export default function StyledComponentsRegistry({
 
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement();
+    // @ts-ignore
     styledComponentsStyleSheet.instance.clearTag();
     return <>{styles}</>;
   });
