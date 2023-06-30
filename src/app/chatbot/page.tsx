@@ -3,7 +3,6 @@
 import Link from 'next/link';
 
 export default function Chatbot() {
-  document.title = 'Leadster - Chatbot';
   return (
     <main className="w-full flex items-center justify-center p-16">
       <div className="font-PJ my-32">

@@ -11,7 +11,6 @@ import { VideoModal } from '@/components/common/VideoModal';
 import infosMock from '../../infos-mock.json';
 
 export default function LeadGeneration() {
-  document.title = 'Leadster - Geração de Leads';
   const [dataReducer, dispatch] = useReducer(
     LeadGenerationReducer,
     LeadGenerationDefaultValues
